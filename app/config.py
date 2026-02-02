@@ -12,10 +12,9 @@ class Settings(BaseSettings):
     funnel_api_base_url: str = "http://localhost:8080/api"
     funnel_api_timeout: int = 30
 
-    # Vertex AI Configuration
-    gcp_project_id: str
-    gcp_location: str = "us-central1"
-    vertex_ai_model: str = "gemini-1.5-pro"
+    # OpenAI Configuration
+    openai_api_key: str
+    openai_model: str = "gpt-4o"
 
     # Database
     database_path: str = "./data/sessions.db"

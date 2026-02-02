@@ -1,5 +1,5 @@
 """LLM integration for smart routing and report generation."""
 
-from app.llm.vertex_ai import VertexAIRouter, create_routing_tools
+from app.llm.openai_router import OpenAIRouter, get_routing_tools
 
-__all__ = ["VertexAIRouter", "create_routing_tools"]
+__all__ = ["OpenAIRouter", "get_routing_tools"]
