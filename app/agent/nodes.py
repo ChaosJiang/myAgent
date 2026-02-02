@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from app.llm import VertexAIRouter
+from app.llm import OpenAIRouter
 from app.models import ActionType, AgentState, CohortParameters, FunnelParameters
 from app.tools import CohortAPIClient, FunnelAPIClient
 
@@ -17,7 +17,7 @@ async def route_intent_node(state: AgentState) -> AgentState:
     Returns:
         Updated state with next_action set
     """
-    router = VertexAIRouter()
+    router = OpenAIRouter()
 
     user_message = state["messages"][-1]["content"]
 
@@ -183,7 +183,7 @@ async def generate_report_node(state: AgentState) -> AgentState:
     Returns:
         Updated state with report
     """
-    router = VertexAIRouter()
+    router = OpenAIRouter()
 
     try:
         report = await router.generate_report(
